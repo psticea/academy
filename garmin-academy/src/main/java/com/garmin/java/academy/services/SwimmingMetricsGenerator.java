@@ -6,11 +6,11 @@ import com.garmin.java.academy.domain.Activity;
 import com.garmin.java.academy.domain.Metrics;
 import com.garmin.java.academy.io.ActivityRepository;
 
-public class RunningMetricsGenerator extends AbstractMetricsGenerator{
+public class SwimmingMetricsGenerator extends AbstractMetricsGenerator{
 
-	public RunningMetricsGenerator(ActivityRepository activityRepository) {
+	public SwimmingMetricsGenerator (ActivityRepository activityRepository) {
 		super(activityRepository);
-		System.out.println("Initialised RunningMetricsGenerator");
+		System.out.println("Initialised SwimmingMetricsGenerator");
 	}
 
 	@Override

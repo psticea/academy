@@ -1,0 +1,27 @@
+[{
+			"name": "Swim 1",
+			"type": "SWIMMING",
+			"date": 1552152430418,
+			"duration": 500,
+			"distance": {
+				"value": 150.0,
+				"measurementUnit": "METERS"
+			},
+			"strokeType":"CRAWL",
+			"swolf": 20,
+			"numberOfStrokes": 120
+		},
+		{
+			"name": "Swim 2",
+			"type": "SWIMMING",
+			"date": 1552252430418,
+			"duration": 600,
+			"distance": {
+				"value": 200.0,
+				"measurementUnit": "METERS"
+			},
+			"strokeType":"BUTTERFLY",
+			"swolf": 25,
+			"numberOfStrokes": 200
+		}
+	]

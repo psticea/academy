@@ -3,18 +3,20 @@ package com.garmin.java.academy.services;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.garmin.java.academy.domain.Metrics;
 import com.garmin.java.academy.io.ActivityRepository;
+import com.garmin.java.academy.io.MetricsRepository;
 
 public class MetricsService {
 
-	private List <Metrics> metrics;
-	private List<MetricsGenerator> generators;
+	private List<MetricsGenerator> metricsGenerators;
+	MetricsRepository metricsRepository;
 	
-	public MetricsService(ActivityRepository activityRepository) {
-		metrics = new LinkedList<Metrics>();
-		generators = new LinkedList<MetricsGenerator>();
-		generators.add(new RunningMetricsGenerator(activityRepository));
+	public MetricsService(ActivityRepository activityRepository, MetricsRepository metricsRepository) {
+	
+		this.metricsRepository = metricsRepository;
+		metricsGenerators = new LinkedList<MetricsGenerator>();
+		metricsGenerators.add(new RunningMetricsGenerator(activityRepository));
+		metricsGenerators.add(new SwimmingMetricsGenerator(activityRepository));
 		
 		initializeAllMetrics();
 		
@@ -22,7 +24,7 @@ public class MetricsService {
 	}
 	
 	private void initializeAllMetrics() {
-		//		generators.stream().
+		
 	}
 
 }

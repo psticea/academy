@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.garmin.java.academy.domain.Activity;
 import com.garmin.java.academy.domain.RunningActivity;
+import com.garmin.java.academy.domain.SwimmingActivity;
 
 public class ActivityRepositoryJsonImpl implements ActivityRepository {
 
@@ -23,7 +24,8 @@ public class ActivityRepositoryJsonImpl implements ActivityRepository {
 	}
 
 	private static final String RUNNING_ACTIVITIES_FILE_NAME = "activities/runningActivities.json";
-
+	 private static final String SWIMMING_ACTIVITIES_FILE_NAME = "activities/swimmingActivities.json";
+	
 	static ObjectMapper mapper = new ObjectMapper();
 
 	private List<Activity> activities;
@@ -46,11 +48,16 @@ public class ActivityRepositoryJsonImpl implements ActivityRepository {
 	@Override
 	public List<Activity> loadActivities() throws IOException, URISyntaxException {
 		String runningActivities = readFile(RUNNING_ACTIVITIES_FILE_NAME);
+		String swimmingActivities = readFile(SWIMMING_ACTIVITIES_FILE_NAME);
 
 		activities = mapper.readValue(runningActivities, new TypeReference<List<RunningActivity>>() {
 		});
+		
+		activities.addAll(mapper.readValue(swimmingActivities, new TypeReference<List<SwimmingActivity>>() {
+		}));
 
-		System.out.println("ActivityRepositoryJsonImpl loaded from file activities: " + activities.size());
+
+		System.out.println("ActivityRepositoryJsonImpl loaded from file " + activities.size() + " activities.");
 		
 		activities.stream().forEach(System.out::println);
 		
