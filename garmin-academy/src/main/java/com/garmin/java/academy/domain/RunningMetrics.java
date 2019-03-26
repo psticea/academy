@@ -11,4 +11,11 @@ public class RunningMetrics extends Metrics {
 		this.averagePace = averagePace;
 	}
 
+	@Override
+	public String toString() {
+		return "RunningMetrics [averagePace=" + averagePace + ", activityType=" + activityType + ", activitiesCount="
+				+ activitiesCount + ", averageSpeed=" + averageSpeed + "]";
+	}
+
+	
 }

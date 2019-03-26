@@ -10,7 +10,7 @@ public interface ActivityRepository {
 
 	void add(Activity activity) throws Exception;
 
-	List<Activity> getActivities() throws Exception;
+	List<Activity> getActivities();
 
 	/**
 	 * Reads activities from memory

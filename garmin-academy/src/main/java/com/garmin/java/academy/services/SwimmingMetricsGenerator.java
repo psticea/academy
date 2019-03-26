@@ -14,7 +14,7 @@ public class SwimmingMetricsGenerator extends AbstractMetricsGenerator{
 	}
 
 	@Override
-	public Metrics generateMetrics(List<Activity> activities) {
+	public Metrics generateMetrics() {
 		// TODO Auto-generated method stub
 		return null;
 	}

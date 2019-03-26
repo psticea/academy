@@ -20,4 +20,11 @@ public class Insight {
 		this.type = type;
 	}
 
+	@Override
+	public String toString() {
+		return "Insight [message=" + message + ", type=" + type + "]";
+	}
+	
+	
+
 }

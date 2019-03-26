@@ -7,5 +7,5 @@ import com.garmin.java.academy.domain.Metrics;
 
 public interface MetricsGenerator {
 	
-	Metrics generateMetrics(List<Activity> activities);
+	Metrics generateMetrics();
 }

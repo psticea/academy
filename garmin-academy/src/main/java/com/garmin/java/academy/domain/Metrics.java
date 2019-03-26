@@ -1,13 +1,14 @@
 package com.garmin.java.academy.domain;
 
+/**
 /*
  * stores metrics for all activities of 
- * a certain activity type
+ * a certain type
  */
 public abstract class Metrics {
-	private ActivityType activityType;
-	private int activitiesCount;
-	private double averageSpeed;
+	protected ActivityType activityType;
+	protected int activitiesCount;
+	protected double averageSpeed;
 
 	public ActivityType getActivityType() {
 		return activityType;
