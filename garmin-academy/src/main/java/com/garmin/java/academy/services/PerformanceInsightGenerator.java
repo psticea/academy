@@ -8,7 +8,6 @@ import com.garmin.java.academy.domain.Activity;
 import com.garmin.java.academy.domain.ActivityType;
 import com.garmin.java.academy.domain.Insight;
 import com.garmin.java.academy.domain.InsightType;
-import com.garmin.java.academy.domain.Metrics;
 import com.garmin.java.academy.domain.RunningActivity;
 import com.garmin.java.academy.domain.RunningMetrics;
 import com.garmin.java.academy.io.ActivityRepository;
@@ -39,19 +38,16 @@ public class PerformanceInsightGenerator implements InsightGenerator {
 		
 		System.out.println("last running activity " + lastRunningActivity.toString());
 		
-		RunningMetrics runningMetrics = (RunningMetrics) metricsRepository
-				.getAllMetrics()
-				.stream()
-				.filter(m -> m.getActivityType().equals(ActivityType.RUNNING))
-				.findFirst()
-				.get();
+		RunningMetrics runningMetrics = (RunningMetrics)metricsRepository.getAllMetrics()
+			.stream()
+			.filter(m -> m.getActivityType().equals(ActivityType.RUNNING))
+			.findFirst()
+			.get();
 		
-		if(lastRunningActivity.getPace()<runningMetrics.getAveragePace())
-		{		
+		if (lastRunningActivity.getPace() < runningMetrics.getAveragePace()) {
 			Insight insight = new Insight();
 			insight.setType(InsightType.PERFORMANCE);
-			insight.setMessage
-				("Your latest running activity has a better pace than your historical average! cool!");
+			insight.setMessage("Your latest running activity has a better pace than your historical average! cool!");
 			insights.add(insight);
 		}
 		return insights;

@@ -50,11 +50,11 @@ public class ActivityRepositoryJsonImpl implements ActivityRepository {
 		String runningActivities = readFile(RUNNING_ACTIVITIES_FILE_NAME);
 		String swimmingActivities = readFile(SWIMMING_ACTIVITIES_FILE_NAME);
 
-		activities = mapper.readValue(runningActivities, new TypeReference<List<RunningActivity>>() {
-		});
+		activities = mapper.readValue(runningActivities, 
+				new TypeReference<List<RunningActivity>>() {});
 		
-		activities.addAll(mapper.readValue(swimmingActivities, new TypeReference<List<SwimmingActivity>>() {
-		}));
+		activities.addAll(mapper.readValue(swimmingActivities, 
+				new TypeReference<List<SwimmingActivity>>() {}));
 
 
 		System.out.println("ActivityRepositoryJsonImpl loaded from file " + activities.size() + " activities.");

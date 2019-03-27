@@ -1,8 +1,5 @@
 package com.garmin.java.academy.services;
 
-import java.util.List;
-
-import com.garmin.java.academy.domain.Activity;
 import com.garmin.java.academy.domain.Metrics;
 import com.garmin.java.academy.io.ActivityRepository;
 

@@ -20,18 +20,15 @@ public class InsightService {
 
 		initializeAllInsights();
 		
-		
-		
 		System.out.println("Initialised InsightService");
 	}
 
 	private void initializeAllInsights() {
-		insights
-			=insightGenerators
-				.stream()
-				.map(InsightGenerator::generateInsights)
-				.flatMap(i -> i.stream())
-				.collect(Collectors.toList());
+		insights = insightGenerators
+			.stream()
+			.map(InsightGenerator::generateInsights)
+			.flatMap(i -> i.stream())
+			.collect(Collectors.toList());
 		
 		System.out.println("InsightsService generated "+insights.size() +" insights" );
 		insights.forEach(System.out::println);
