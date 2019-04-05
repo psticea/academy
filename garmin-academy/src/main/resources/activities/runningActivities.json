@@ -1,2 +1,41 @@
 [
+	{
+		"name": "Monday Run",
+		"type": "RUNNING",
+		"date": 1552052430418,
+		"duration": 700,
+		"distance": {
+			"value": 2000.0,
+			"measurementUnit": "METERS"
+		},
+		"elevation": 2,
+		"slope": null,
+		"pace": null
+	},
+	{
+		"name": "Tuesday Run",
+		"type": "RUNNING",
+		"date": 1552152530418,
+		"duration": 1100,
+		"distance": {
+			"value": 3000.0,
+			"measurementUnit": "METERS"
+		},
+		"elevation": 3,
+		"slope": null,
+		"pace": null
+	},
+	{
+		"name": "Wednesday Run",
+		"type": "RUNNING",
+		"date": 1552252630418,
+		"duration": 1400,
+		"distance": {
+			"value": 4000.0,
+			"measurementUnit": "METERS"
+		},
+		"elevation": 4,
+		"slope": null,
+		"pace": 5.5
+	}
 ]
