@@ -1,5 +1,6 @@
 package com.garmin.java.academy.services;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,23 +28,25 @@ public class PerformanceInsightGenerator implements InsightGenerator {
 	@Override
 	public List<Insight> generateInsights() {
 		List<Insight> insights = new LinkedList<Insight>();
-		
-		
-		RunningActivity lastRunningActivity =
-		(RunningActivity) activityRepository.getActivities()
-			.stream()
-			.filter(a -> a.getType().equals(ActivityType.RUNNING))
-			.max(Comparator.comparing(Activity::getDate))
-			.get();
-		
+
+		RunningActivity lastRunningActivity = (RunningActivity) activityRepository.getActivities()//
+				.stream()//
+				.filter(a -> a.getType().equals(ActivityType.RUNNING))//
+				.max(Comparator.comparing(Activity::getDate))//
+				.orElse(null);
+		// TODO if we consider insights for other activities, the below return logic can change
+		if (lastRunningActivity == null) {
+			// we prefer to return empty list instead of null to avoid possible NullPointerExceptions
+			return Collections.emptyList();
+		}
+
 		System.out.println("last running activity " + lastRunningActivity.toString());
-		
-		RunningMetrics runningMetrics = (RunningMetrics)metricsRepository.getAllMetrics()
-			.stream()
-			.filter(m -> m.getActivityType().equals(ActivityType.RUNNING))
-			.findFirst()
-			.get();
-		
+
+		// TODO add the necessary checks so that we do not run into accessing missing elements!!!!
+		RunningMetrics runningMetrics = (RunningMetrics) metricsRepository.getAllMetrics().stream()//
+				.filter(m -> m.getActivityType().equals(ActivityType.RUNNING))//
+				.findFirst().get();
+
 		if (lastRunningActivity.getPace() < runningMetrics.getAveragePace()) {
 			Insight insight = new Insight();
 			insight.setType(InsightType.PERFORMANCE);
