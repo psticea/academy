@@ -1,0 +1,13 @@
+{
+	"name": "Monday Run",
+	"type": "SWIMMING",
+	"date": 1552052430418,
+	"duration": 2000,
+	"distance": {
+		"value": 123.0,
+		"measurementUnit": "METERS"
+	},
+	"elevation": null,
+	"slope": null,
+	"pace": null
+}

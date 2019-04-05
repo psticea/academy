@@ -1,14 +1,13 @@
 package com.garmin.java.academy.io;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.List;
 
 import com.garmin.java.academy.domain.Activity;
+import com.garmin.java.academy.domain.exceptions.ReadActivityException;
 
 public interface ActivityRepository {
 
-	void add(Activity activity) throws Exception;
+	void add(Activity activity);
 
 	List<Activity> getActivities();
 
@@ -16,8 +15,7 @@ public interface ActivityRepository {
 	 * Reads activities from memory
 	 * 
 	 * @return
-	 * @throws IOException
-	 * @throws URISyntaxException
+	 * @throws ReadActivityException 
 	 */
-    List <Activity> loadActivities() throws Exception;
+	List<Activity> loadActivities();
 }
