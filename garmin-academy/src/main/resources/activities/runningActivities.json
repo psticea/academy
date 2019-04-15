@@ -9,8 +9,8 @@
 			"measurementUnit": "METERS"
 		},
 		"elevation": 2,
-		"slope": null,
-		"pace": null
+		"slope": 0.02,
+		"pace": 5.83
 	},
 	{
 		"name": "Tuesday Run",
@@ -22,8 +22,8 @@
 			"measurementUnit": "METERS"
 		},
 		"elevation": 3,
-		"slope": null,
-		"pace": null
+		"slope": 0.01,
+		"pace": 6.11
 	},
 	{
 		"name": "Wednesday Run",
@@ -35,7 +35,33 @@
 			"measurementUnit": "METERS"
 		},
 		"elevation": 4,
-		"slope": null,
-		"pace": 5.5
+		"slope": 0.01,
+		"pace": 5.83
+	},
+	{
+		"name": "Friday Run",
+		"type": "RUNNING",
+		"date": 1552411823000,
+		"duration": 3460,
+		"distance": {
+			"value": 10000.0,
+			"measurementUnit": "METERS"
+		},
+		"elevation": 4,
+		"slope": 0.01,
+		"pace": 5.76
+	},
+	{
+		"name": "Semi Marathon Run",
+		"type": "RUNNING",
+		"date": 1552674623000,
+		"duration": 7500,
+		"distance": {
+			"value": 21000.0,
+			"measurementUnit": "METERS"
+		},
+		"elevation": 4,
+		"slope": 0.01,
+		"pace": 5.95
 	}
 ]
